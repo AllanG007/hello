@@ -1,3 +1,11 @@
+import sys #system functions and parameters
+from datetime import datetime as dt #using an alias
+
+
+#importing is important 
+print(sys.version)
+
+
 # here wo go, 2nd time lucky
 print("Hello, World")
 print('Hello, world - again')
@@ -57,12 +65,12 @@ print('\n')
 
 # Functions - Reusable block of code (like a program)
 
-def who_am_i(name,age):
+#def who_am_i(name,age):
     #name = "Allan" #local var - only true to func right here
     #age = 40
-    print(f"My name is {name} and I am {age} years old")
+    #print("My name is {name} and I am {age} years old")
 
-who_am_i("Allan", 40)
+#who_am_i("Allan", 40)
 
 def add_one_hundred(num):
     print(num + 100)
@@ -151,3 +159,144 @@ print(alcohol(20,4))
 nl()
 
 #let's see if this updates now
+#loops Jeremy
+
+#For Loops - Start to finish of an iterate
+vegetables = ["Cucumber", "Spinach", "Cabbage"]
+for veggies in vegetables:
+    print(veggies)
+
+for i in range(5):
+    print(i)
+
+word = "Python"
+for letter in word:
+    print(letter)
+
+#While Loop - as long as true
+i = 1
+
+while i < 10:
+    print(i)
+    i += 1
+
+#password = ""
+
+#while password != "spaghetti":
+   # password = input("Enter the secret password: ")
+
+#print("Access Granted")
+
+# Building a Calculator
+nl()
+#Lists - Comprises of items in [] brackets 
+
+movies = ["Lord of the Rings", "Talledega Nights", "Step Brothers", "Your Highness"]
+
+print(movies[1]) #0 = 1, 1 = 2, 2 = 3 & 3 = 4
+print(movies[0:2]) #returns the first number given up to before the last
+print(movies[1:4]) #returns movies 1 - 3
+print(movies[:2]) #everything before 2
+print(movies[-1]) #last one
+
+print(len(movies)) #counts items in list
+movies.append("Jaws") #adds item to the end of our list
+print(movies)
+
+movies.insert(2, "Jumanji")
+print(movies)
+
+movies.pop() #removes last item
+print(movies)
+
+movies.pop(0) #removes first item
+print(movies)
+
+amber_movies = ["one", "two"]
+our_favourite_movies = movies + amber_movies
+print(our_favourite_movies)
+
+grades = [["Bob", 82], ["Alice", 90], ["Jeff", 88]]
+bobs_grades = grades[0][1]
+print(bobs_grades)
+grades[0][1] = 83
+print(grades)
+
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(nested_list[1][2])
+
+#Tuples - Immutable - Can't be changed
+#
+Coordinates = (40.7128, 74.0060) #New York
+red = (255, 0, 0)
+green = (0, 255, 0)
+blue = (0, 0, 255)
+student = ("John Doe", 5564865, "Computer Science")
+
+print(student[1])
+
+nl()
+
+#Dictionaries - Key/value pairs {}
+
+drinks = {"White Russian": 8, "Old Fashioned": 12, "Lemon Drop": 5}#drink is key/ price is value
+print(drinks)
+
+employees = {"Finance": ["Bob", "Linda", "Tina"], "IT": ["Jean", "Louise", "Teddy"], "HR": ["Jimmy Jnr", "Mort"]}
+print(employees)
+employees['Legal'] = ["Mr. Frond"] #key value pair added
+print(employees)
+
+employees.update({"Sales": ["Andy", "Olly"]}) #also adds new vp
+print(employees)
+
+drinks['White Russian'] = 9
+print(drinks)
+
+print(drinks.get("White Russian"))
+
+#strings again - but advanced
+
+nl()
+
+my_name = "Allan"
+print(my_name[0])
+print(my_name[-1])
+
+sentence = "This is a sentence. "
+print(sentence[:4])
+
+print(sentence.split()) #delimeter - default is a space
+
+sentence_split = sentence.split()
+sentence_join = '-'.join(sentence_split)
+print(sentence_join) #removes the spaces
+
+quote = "Bingo Said, 'To be or not to be - that is a question'"
+quote = "Bingo said, \"To be or not to be - that is a question\"" 
+print(quote)
+
+too_much_space = "                          Hello   "
+print(too_much_space.strip())
+
+#booleans 
+print("A" in "Apple") #return True - case sensitive
+print("a" in "Apple") #return False - case sensitive
+
+letter = "A"
+word = "Apple"
+print(letter.lower() in word.lower()) #improved
+
+#user_input = input("Enter yes or no: ")
+#if user_input.lower().strip() == "yes":
+#    print("You Agree! ")
+#else: 
+#    print("You disagree!")
+
+movie = "The Hangover"
+print("My Favourite movie is {}.".format(movie))
+print("My Favourite movie is %s." %movie)
+print(f"my favourite move is {movie}. ")
+
+print(sys.version)
+print(dt.now())
